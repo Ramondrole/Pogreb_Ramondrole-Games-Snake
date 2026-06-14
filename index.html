@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramondrole - Змейка</title>
+    <link rel="icon" href="./Ramondrole.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">RAMONDROLE</div>
+        <div class="nav-links">
+            <a href="https://ramondrole.github.io/Pogreb_Ramondrole-About_me/" data-key="about">Обо мне</a>
+            <a href="https://ramondrole.github.io/Pogreb_Ramondrole-Games/" data-key="gamesTitle">Наши игры</a>
+            <a href="https://ramondrole.github.io/Pogreb_Ramondrole-Userful_functions/" data-key="functions">Полезные функции</a>
+        </div>
+        <div class="language-switcher">
+            <button class="lang-btn" id="langBtn">🌐 RU</button>
+            <ul class="lang-dropdown">
+                <li><a href="#" data-lang="ru">🇷🇺 Русский</a></li>
+                <li><a href="#" data-lang="en">🇺🇸 English</a></li>
+                <li><a href="#" data-lang="de">🇩🇪 Deutsch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="game-wrapper">
+        <div class="stats-container">
+            <div class="stat">
+                <div class="stat-label" data-key="score">СЧЕТ</div>
+                <div class="stat-value" id="score">0</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label" data-key="record">РЕКОРД</div>
+                <div class="stat-value" id="highScore">0</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label" data-key="speed">СКОРОСТЬ</div>
+                <div class="stat-value" id="speed">1</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label" data-key="length">ДЛИНА</div>
+                <div class="stat-value" id="length">1</div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-overlay" id="gameOverlay">
+                <div class="overlay-content">
+                    <h2 id="overlayTitle">RAMONDROLE SNAKE</h2>
+                    <p id="overlayText">Нажмите ПРОБЕЛ или кнопку "СТАРТ" для начала игры</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-controls" id="mobileControls">
+            <button class="control-btn up-btn" id="upBtn"><i class="fas fa-chevron-up"></i></button>
+            <button class="control-btn left-btn" id="leftBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="control-btn right-btn" id="rightBtn"><i class="fas fa-chevron-right"></i></button>
+            <button class="control-btn down-btn" id="downBtn"><i class="fas fa-chevron-down"></i></button>
+        </div>
+
+        <div class="game-controls">
+            <button class="action-btn start-btn" id="startBtn"><i class="fas fa-play"></i> <span data-key="startBtn">Старт</span></button>
+            <button class="action-btn pause-btn" id="pauseBtn"><i class="fas fa-pause"></i> <span data-key="pauseBtn">Пауза</span></button>
+            <button class="action-btn reset-btn" id="resetBtn"><i class="fas fa-redo"></i> <span data-key="resetBtn">Новая игра</span></button>
+        </div>
+
+        <div class="instructions">
+            <h3 data-key="controlsTitle">Управление</h3>
+            <div class="instructions-grid">
+                <div class="instruction-item">
+                    <div class="instruction-icon"><i class="fas fa-keyboard"></i></div>
+                    <div class="instruction-text" data-key="controlsKeys">Клавиши <span class="key">↑</span> <span class="key">↓</span> <span class="key">←</span> <span class="key">→</span> или <span class="key">W</span> <span class="key">A</span> <span class="key">S</span> <span class="key">D</span> для управления</div>
+                </div>
+                <div class="instruction-item">
+                    <div class="instruction-icon"><i class="fas fa-space-shuttle"></i></div>
+                    <div class="instruction-text" data-key="controlsPause">Клавиша <span class="key">ПРОБЕЛ</span> для паузы</div>
+                </div>
+                <div class="instruction-item">
+                    <div class="instruction-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="instruction-text" data-key="controlsMobile">На мобильных устройствах используйте кнопки управления</div>
+                </div>
+                <div class="instruction-item">
+                    <div class="instruction-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="instruction-text" data-key="controlsGoal">Собирайте неоновые кубы для увеличения длины и счета</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="snake.js"></script>
+</body>
+</html>
